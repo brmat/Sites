@@ -7,7 +7,7 @@ Projet Client n°3 pour la www.wildcodeschool.fr.
 
 ###Technologies utilisées :###
 
-HTML5, CSS3, Javascript, Jquery, Materialize, SublimeText.
+PHP Symfony, HTML5, CSS3, Javascript, Jquery, Materialize, PhpStorm.
 
 ###Statut :###
  Fermer

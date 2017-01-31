@@ -25,6 +25,10 @@ Puis entrer la commande suivante :
 
 Projet Personnel n°4 pour la www.wildcodeschool.fr.
 
+###Technologies utilisées :###
+
+PHP Symfony, HTML5, CSS3, Javascript, Jquery, JSON, Materialize, API Google Map, PhpStorm.
+
 
 
 
