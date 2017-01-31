@@ -1,0 +1,86 @@
+
+<? php include('header.php') ; ?>
+<html>
+<head>
+
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<!--Import Google Icon Font-->
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/materialize.css">
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css">
+	<script src="js/jquery.min.js"></script>
+ 
+	<script>$(".dropdown-button").dropdown();</script>
+
+	<title>Point Jardin matériaux pour le jardin Saint Rémy sur Avre</title>
+
+</head>
+<body bgcolor="#E6E6FA">
+
+<div class="flex-container3">
+	<p align="center"><strong>Contact</strong></p>
+	<table width="500" border="0" align="center" cellpadding="0" cellspacing="0">
+	<form action="envoi.php" method="post" enctype="application/x-www-form-urlencoded" name="formulaire">
+	<tr> 
+	<td colspan="3"><strong>Envoyer un message</strong></td>
+	</tr>
+	<tr> 
+	<td><div align="left">Votre nom :</div></td>
+	<td colspan="2"><input type="text" name="nom" size="45" maxlength="100"></td>
+	</tr>
+	<tr> 
+	<td width="17%"><div align="left">Votre mail :</div></td>
+	<td colspan="2"><input type="text" name="mail" size="45" maxlength="100"></td>
+	</tr>
+	<tr> 
+	<td><div align="left">Sujet : </div></td>
+	<td colspan="2"><input type="text" name="objet" size="45" maxlength="120"></td>
+	</tr>
+	<tr> 
+	<td><div align="left">Message : </div></td>
+	<td colspan="2"><textarea name="message" cols="50" rows="10"></textarea></td>
+	</tr>
+	<tr> 
+	<td></td>
+	<td width="42%"><center>
+	<input type="reset" name="Submit" value="Réinitialiser le formulaire">
+	</center></td>
+	<td width="41%"><center>
+	<input type="submit" name="Submit" value="Envoyer">
+	</center></td>
+	</tr>
+	</form>
+	</table>
+</div>
+
+<ul class="flex-container2" align="center">
+	<li class="flex-item">CONTACT :</li><br>
+	<li class="flex-item">54 route Nationale 12</li>
+	<li class="flex-item">28380 Saint-Rémy-sur-Avre</li>
+	<li class="flex-item">02.37.63.50.22</li>
+	<li class="flex-item">info@point-jardin.fr</li><br>
+</ul>
+
+<ul class="flex-container2" align="center">
+	<li class="flex-item">HORAIRES :</li><br>
+	<li class="flex-item">Du lundi au vendredi:</li>
+	<li class="flex-item">8h/12h - 13h30/18h</li>
+	<li class="flex-item">Le samedi:</li>
+	<li class="flex-item">9h/17h30 non stop</li>
+	<li class="flex-item">Le dimanche:</li>
+	<li class="flex-item">Ouverture exceptionnelle indiquée en page Accueil.</li>
+</ul>
+
+
+<? php include('footer.php') ; ?>
+
+<div class="gmap"><center>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d21044.960107272655!2d1.2769860000000002!3d48.750955!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1473855350617" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+	</center>
+</div>
+</body>
+</html>
