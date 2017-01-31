@@ -1,0 +1,109 @@
+{% extends '@Corinne/layout.html.twig' %}
+
+{% block body %}
+
+    <link rel="stylesheet" type="text/css" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.css" />
+
+    <ul class="grid effect-6 grid_press" id="grid">
+        {% for presse in presses %}
+            <li>
+                <img id="{{ presse.id }}" class="fancybox" src="{{ asset('uploads/img-presse/')}}{{ presse.source }}" alt="{{ presse.alt }}" data-zoom-image="{{ asset('uploads/img-presse/')}}{{ presse.source }}">
+                {#<a class="downlaod_link_press" href="{{ asset('uploads/img-presse/')}}{{ presse.source }}">Télécharger l'article</a>#}
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
+
+{% block js %}
+
+    <script type="text/javascript" src="{{ asset('bundles/corinne/js/masonry_grid/modernizr.custom.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/corinne/js/masonry_grid/masonry.pkgd.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/corinne/js/masonry_grid/js_imagesloaded.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/corinne/js/masonry_grid/js_classie.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/corinne/js/masonry_grid/AnimeOnScroll.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/corinne/js/jquery.elevatezoom.js') }}"></script>
+
+    <script>
+        // ********************************************************************
+        // *                       AnimOnScroll Masonry Grid
+        // ********************************************************************
+
+        new AnimOnScroll( document.getElementById( 'grid' ), {
+            minDuration : 0.4,
+            maxDuration : 0.7,
+            viewportFactor : 0.2
+        } );
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-7243260-2']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.pack.min.js"></script>
+
+    <script type="text/javascript">
+
+        // ********************************************************************
+        // *                       FANCY ZOOM
+        // ********************************************************************
+
+        $(function($){
+            var addToAll = false;
+            var gallery = false;
+            var titlePosition = 'inside';
+            $(addToAll ? 'img' : 'img.fancybox').each(function(){
+                var $this = $(this);
+                var title = $this.attr('title');
+                var src = $this.attr('data-big') || $this.attr('src');
+                var a = $('<a href="#" class="fancybox"></a>').attr('href', src).attr('title', title);
+                $this.wrap(a);
+            });
+            if (gallery)
+                $('a.fancybox').attr('rel', 'fancyboxgallery');
+            $('a.fancybox').fancybox({
+                titlePosition: titlePosition
+            });
+        });
+        $.noConflict();
+    </script>
+
+    <script>
+
+        // ********************************************************************
+        // *                    ZOOM IMAGE
+        // ********************************************************************
+
+        function zoomer() {
+
+            console.log('ma fonction zoom');
+
+            //Inner Zoom
+
+            $('#zoom_01').elevateZoom({
+                zoomType				: "inner",
+                cursor: "crosshair"
+            });
+
+            //Lens Zoom
+
+            {% for presse in presses %}
+                $( '#{{ presse.id }}' ).elevateZoom({
+                    zoomType : "lens",
+                    lensShape : "round",
+                    lensSize : 200
+                });
+            {% endfor %}
+
+        }
+        zoomer();
+    </script>
+
+{% endblock %}

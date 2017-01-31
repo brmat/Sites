@@ -1,0 +1,96 @@
+{% extends '@Corinne/admin/index.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="card teal">
+        <h1 class="white-text">Editer un évènement :</h1>
+        </div>
+        {{ form_start(edit_form) }}
+
+        <div class="row">
+            <div class="col s12 m6 l6">
+                <label><h6>Titre</h6></label>
+                {{ form_widget(edit_form.titre) }}
+                {{ form_errors(edit_form.titre) }}
+            </div>
+
+            <div class="col s12 m6 l6">
+                <label><h6>Descriptif</h6></label>
+                {{ form_widget(edit_form.descriptif, {'attr': {'class': 'materialize-textarea'}}) }}
+                {{ form_errors(edit_form.descriptif) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s4 offset-s1">
+                <div class="row">
+                    {{ form_label(edit_form.dateDebut, "Date de début") }}
+                </div>
+                <div class="row">
+                    <div class="col s4">
+                        {{ form_widget(edit_form.dateDebut.day) }}
+                    </div>
+                    <div class="col s4">
+                        {{ form_widget(edit_form.dateDebut.month) }}
+                    </div>
+                    <div class="col s4">
+                        {{ form_widget(edit_form.dateDebut.year) }}
+                    </div>
+                </div>
+                {{ form_errors(edit_form.dateDebut) }}
+            </div>
+
+            <div class="col s4 offset-s2">
+                <div class="row">
+                    {{ form_label(edit_form.dateFin, "Date de fin") }}
+                </div>
+                <div class="row">
+                    <div class="col s4">
+                        {{ form_widget(edit_form.dateFin.day) }}
+                    </div>
+                    <div class="col s4">
+                        {{ form_widget(edit_form.dateFin.month) }}
+                    </div>
+                    <div class="col s4">
+                        {{ form_widget(edit_form.dateFin.year) }}
+                    </div>
+                </div>
+                {{ form_errors(edit_form.dateFin) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12">
+                <label><h6>Lieu</h6></label>
+                {{ form_widget(edit_form.lieu) }}
+                {{ form_errors(edit_form.lieu) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m6 l6">
+                <label><h6>Image</h6></label>
+                {{ form_widget(edit_form.file) }}
+                {{ form_errors(edit_form.file) }}
+            </div>
+            <div class="col s12 m6 l6">
+                <label><h6>Nom de l'image</h6></label>
+                {{ form_widget(edit_form.alt) }}
+                {{ form_errors(edit_form.alt) }}
+            </div>
+        </div>
+
+        <div class="row center">
+            <ul>
+                <li>
+                    <input class="waves-effect waves-light btn" type="submit" value="Valider" />
+                    <a href="{{ path('event_index') }}" class="waves-effect waves-light btn">Retour a la Liste</a>
+                </li>
+            </ul>
+        </div>
+
+        {{ form_end(edit_form) }}
+    </div>
+
+{% endblock %}

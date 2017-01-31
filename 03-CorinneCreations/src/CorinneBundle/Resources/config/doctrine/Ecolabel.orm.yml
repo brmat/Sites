@@ -1,0 +1,23 @@
+CorinneBundle\Entity\Ecolabel:
+    type: entity
+    table: null
+    repositoryClass: CorinneBundle\Repository\EcolabelRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        source:
+            type: string
+            length: 255
+        alt:
+            type: string
+            length: 255
+        texte:
+            type: text
+    lifecycleCallbacks:
+        prePersist: [ setCreatedAtValue, setExpiresAtValue ]
+        preUpdate: [ setUpdatedAtValue ]
+

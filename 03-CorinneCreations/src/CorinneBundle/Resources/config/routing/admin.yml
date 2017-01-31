@@ -1,0 +1,4 @@
+admin_index:
+    path:     /admin
+    defaults: { _controller: "CorinneBundle:Admin:index" }
+    methods:  [GET, HEAD]

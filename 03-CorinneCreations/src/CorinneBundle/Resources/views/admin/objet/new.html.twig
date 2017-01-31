@@ -1,0 +1,84 @@
+{% extends '@Corinne/admin/index.html.twig' %}
+
+{% block body %}
+
+        <div class="container">
+            <div class="card teal center">
+                <h1 class="white-text">Ajouter une oeuvre :</h1>
+            </div>
+
+
+            {{ form_start(form) }}
+
+            <div class="row">
+                <div class="col s12">
+                    <div class="input-field">
+                        {{ form_widget(form.slider) }}
+                        {{ form_label(form.slider, "Ajouter au slider ?") }}
+                        {{ form_errors(form.slider) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12">
+                    {{  form_label(form.file, "Choisissez une image") }}
+                    {{ form_widget(form.file) }}
+                    {{ form_errors(form.file) }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12">
+                    <div class="input-field">
+                        <label>Nom de l'image</label>
+                        {{ form_widget(form.alt) }}
+                        {{ form_errors(form.alt) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12">
+                    <div class="input-field">
+                        <label>Descritpion de l'oeuvre</label>
+                        {{ form_widget(form.definition, {'attr': {'class': 'materialize-textarea'}}) }}
+                        {{ form_errors(form.definition) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12">
+                    <div class="input-field col s12">
+                        {{ form_label(form.categ, "Catégorie") }} <br><br>
+                        {{ form_widget(form.categ) }}
+                        {{ form_errors(form.categ) }}
+                        {% do form.categ.setRendered %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12">
+                    <div class="input-field">
+                        <label for="{{ form.sousCateg.vars.full_name }}">Sous categorie</label><br><br>
+                        {{ form_widget(form.sousCateg) }}
+                        {{ form_errors(form.sousCateg) }}
+                        {% do form.sousCateg.setRendered %}
+                    </div>
+                </div>
+            </div>
+
+                <div class="row center">
+                    <input class="waves-effect waves-light btn" type="submit" value="Valider" />
+                    <a href="{{ path('objet_index') }}" class="waves-effect waves-light btn">Retour a la Liste</a>
+                </div>
+
+                <div class=""> {{ form_rest(form) }} </div>
+
+            {{ form_end(form) }}
+
+        </div>
+
+{% endblock %}

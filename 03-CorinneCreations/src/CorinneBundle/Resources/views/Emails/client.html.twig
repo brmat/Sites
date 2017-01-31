@@ -1,0 +1,26 @@
+{% extends '@Corinne/layout.html.twig' %}
+
+{# Corinne/Resources/views/Emails/registration.html.twig #}
+
+
+{% block body %}
+<h3 class="amber-text">Je vous remercie !</h3>
+
+<p class="amber-text">
+Bonjour {{ name }}!
+</p>
+
+<br>
+<p class="amber-text">
+Votre demande de contact a bien été transmise .
+</p>
+
+{# example, assuming you have a route named "login" #}
+{#To login, go to: <a href="{{ url('login') }}">...</a>.#}
+
+<p class="amber-text">Merci ! </p>
+
+
+
+{# Makes an absolute URL to the /images/logo.png file #}
+{#<img src="{{ absolute_url(asset('images/logo.png')) }}">#}

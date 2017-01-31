@@ -1,0 +1,82 @@
+{% extends '@Corinne/admin/index.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="card teal center">
+            <h1 class="white-text">Editer une oeuvre :</h1>
+        </div>
+
+        {{ form_start(edit_form) }}
+
+        <div class="row">
+            <div class="col s2">
+                <img class="previous_img" src="{{ asset('uploads/pictures/') }}{{ objet.source }}" alt="{{ objet.alt }}">
+            </div>
+            <div class="file-field input-field col s10">
+                <div class="btn">
+                    <span>Image</span>
+                    {{ form_widget(edit_form.file) }}
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Selectionner une image">
+                </div>
+                {{ form_errors(edit_form.file) }}
+                <p>Image actuelle sur la gauche</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <label>Nom de l'image</label>
+                {{ form_widget(edit_form.alt) }}
+                {{ form_errors(edit_form.alt) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <label>Définition</label>
+                {{ form_widget(edit_form.definition, {'attr': {'class': 'materialize-textarea'}}) }}
+                {{ form_errors(edit_form.definition) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                {{ form_label(edit_form.categ, "Catégorie") }} <br><br>
+                {{ form_widget(edit_form.categ) }}
+                {{ form_errors(edit_form.categ) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <label>Sous catégorie</label> <br><br>
+                {{ form_widget(edit_form.sousCateg) }}
+                {{ form_errors(edit_form.sousCateg) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                {{ form_widget(edit_form.slider) }}
+                {{ form_label(edit_form.slider, "ajouter au slider ?") }}
+                {{ form_errors(edit_form.slider) }}
+            </div>
+        </div>
+
+        <div class="row center">
+            <ul>
+                <li>
+                    <input class="waves-effect waves-light btn" type="submit" value="Valider" />
+                    <a href="{{ path('objet_index') }}" class="waves-effect waves-light btn">Retour a la Liste</a>
+                </li>
+            </ul>
+        </div>
+
+        {{ form_end(edit_form) }}
+
+    </div>
+
+{% endblock %}

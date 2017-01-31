@@ -1,0 +1,51 @@
+corinne_homepage:
+    path:     /
+    defaults: { _controller: CorinneBundle:Default:index }
+
+corinne_parcour:
+    path:     /parcour
+    defaults: { _controller: CorinneBundle:Default:parcours }
+
+corinne_creation:
+    path:     /creation
+    defaults: { _controller: CorinneBundle:Default:creation }
+
+corinne_liste:
+    path:     /liste/{id}
+    defaults: { _controller: CorinneBundle:Categorie:liste }
+
+corinne_ecolabel:
+    path:     /ecolabel
+    defaults: { _controller: CorinneBundle:Default:ecolabel }
+
+corinne_contact:
+    path:     /contact
+    defaults: { _controller: CorinneBundle:Default:contact }
+
+corinne_atelier:
+    path:     /atelier
+    defaults: { _controller: CorinneBundle:Default:atelier }
+
+corinne_access:
+    path:     /access
+    defaults: { _controller: CorinneBundle:Default:access }
+
+corinne_presse:
+    path:     /presse
+    defaults: { _controller: CorinneBundle:Default:presse }
+
+corinne_event:
+    path:     /event
+    defaults: { _controller: CorinneBundle:Default:event }
+
+corinne_mailclient:
+    path:     /mailclient
+    defaults: { _controller: CorinneBundle:Default:mailClient }
+
+corinne_mailcorinnecreation:
+    path:     /mailcorinnecreation
+    defaults: { _controller: CorinneBundle:Default:mailCorinneCreation }
+
+corinne_mention:
+    path:     /mention
+    defaults: { _controller: CorinneBundle:Default:mention }

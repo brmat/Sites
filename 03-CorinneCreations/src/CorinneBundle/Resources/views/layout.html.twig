@@ -1,0 +1,124 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    <header>
+        <div class="container box-margin">
+            <nav id="menu-index" class="transparent">
+                <div class="nav-wrapper">
+                    <div class="row valign-wrapper">
+                        <div class="valign col s12 offset-m1 m3 right">
+                            <a href="{{ path('corinne_homepage') }}"><img src="{{ asset('bundles/corinne/images/logo2.png') }}" alt="CorinneCreation" class="hide-on-med-and-down img-logo "></a>
+                        </div>
+                        <div class="valign col s12 m8" id="menu-index-text">
+                            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                                <div class="row">
+                                    <li class="col s12 m12">
+                                        <a href="{{ path('corinne_parcour') }}"><span id="idMonHistoire" class="navTextCC">Mon histoire</span></a>
+                                    </li>
+                                </div>
+                                <div class="row">
+                                    <li class="col s12  offset-m3">
+                                        <a href="{{ path('corinne_creation') }}"><span id="idMesCreations" class="navTextCC">Mes créations</span></a>
+                                    </li>
+                                </div>
+                                <div class="row">
+                                    <li class="col s12 offset-m6">
+                                        <a href="{{ path('corinne_presse') }}"><span  class="navTextCC">Coin presse</span></a>
+                                    </li>
+                                </div>
+
+                                <div class="row">
+                                    <li class="col s12 offset-m3">
+                                        <a href="{{ path('corinne_ecolabel') }}"><span id="idEcoLabel" class="navTextCC">Eco-label</span></a>
+                                    </li>
+                                </div>
+                                <div class="row">
+                                    <li class="col s12 m12 offset-m1">
+                                        {#<a href="{{ path('contact_new') }}"><span id="idContact" class="navTextCC">Contact</span></a>#}
+                                        <a class="modal-trigger" data-target="#modal1"  href="#modal1"><span id="idContact" class="navTextCC">Contact</span></a>
+                                    </li>
+                                </div>
+                            </ul>
+                        </div>
+
+                        <ul class="side-nav" id="mobile-demo">
+                            <li> <a href="{{ path('corinne_parcour') }}" class="center-align navTextMobileCC amber-text">MON HISTOIRE</a></li>
+                            <li> <a href="{{ path('corinne_creation') }}" class="center-align  navTextMobileCC amber-text">MES CREATIONS</a> </li>
+                            <li> <a href="{{ path('corinne_presse') }}" class="center-align  navTextMobileCC amber-text">COIN PRESSE</a>  </li>
+                            <li> <a href="{{ path('corinne_ecolabel') }}"  class="center-align  navTextMobileCC amber-text">ECO-LABEL</a> </li>
+                            <li> <a href="{{ path('corinne_contact') }}"  class="center-align  navTextMobileCC amber-text">CONTACT</a> </li>
+                        </ul>
+
+                    </div>
+                    <div  class="row">
+
+                        <div class="col s6">
+                            <a href="{{ path('corinne_homepage') }}"><img src="{{ asset('bundles/corinne/images/logo2.png') }}" alt="CorinneCreation" class="hide-on-large-only img-logo left"></a>
+                        </div>
+
+                        <div class="col offset-s4 s2">
+                            <a href="#" data-activates="mobile-demo" class="button-collapse  amber-text"><i class="material-icons">menu</i></a>
+                        </div>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Modal Trigger -->
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            {#{{ render(controller('CorinneBundle:Default:contact')) }}#}
+            {{ render(controller('CorinneBundle:Contact:new')) }}
+
+        </div>
+    </div>
+
+    {# message de sécurité du clic droit #}
+    {#<div>#}
+        {#<a class="modal-trigger" data-target="#modalAlertBouton"  href="#modalAlert"><span id="idAlert" class="navTextCC">Alert de sécurité</span></a>#}
+    {#</div>#}
+
+    <div id="modalAlert" class="modal modal-fixed-footer">
+        <div class="modal-content white">
+            <h4>Votre attention s'il vous plait</h4>
+            <h3 class="center valign">
+                <br><br><br>
+                Merci de ne pas copier
+            </h3>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Fermer</a>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block footer %}
+    <footer class="container">
+        <div class="row">
+            <div class="col l12 s12">
+                <p class="text-copyright">
+                    <a href="{{ path('admin_index') }} " style="color:white">©</a>
+                    Copyright all rights reserved - design by
+                    <a href="{{ asset('http://www.wildcodeschool.fr') }}" style="color:white">
+                        <span id="wild">&nbsp; Wild Code School.</span>
+                    </a>
+                    <a href="{{ path('corinne_mention') }}" style="color:white">
+                        <span id="">&nbsp; Mentions Légales.</span>
+                    </a>
+                </p>
+                <img src="{{ asset('bundles/corinne/images/logo-made-in-france.png') }}" alt="made in france" class="right right-size-mif">
+
+                <!-- Load Facebook SDK for JavaScript -->
+                <iframe src="http://www.facebook.com/plugins/like.php?href=https://www.facebook.com/corinnecreationservauville/?fref=tspage.html&layout=button&show_faces=true&width=65&action=like&font=arial&colorscheme=light&height=65"
+                        scrolling="no" frameborder="0" class="like-fb"  allowTransparency="true"></iframe>
+                {#<div class="fb-like" data-href="https://www.facebook.com/Corinne-Creations-cr%C3%A9ation-dobjets-et-bijoux-en-verre-artisan-verrier-657167984349510/?pnref=lhc" data-width="70" data-layout="box_count" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>#}
+            </div>
+        </div>
+    </footer>
+{% endblock %}
+

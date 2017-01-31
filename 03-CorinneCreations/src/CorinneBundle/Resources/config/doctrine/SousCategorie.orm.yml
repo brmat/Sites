@@ -1,0 +1,28 @@
+CorinneBundle\Entity\SousCategorie:
+    type: entity
+    table: null
+    repositoryClass: CorinneBundle\Repository\SousCategorieRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nomsouscat:
+            type: string
+            length: 255
+    manyToOne:
+        categorie:
+            targetEntity: CorinneBundle\Entity\Categorie
+            inversedBy: souscategorie
+            joinColumn:
+                name: cat_id
+                referencedColumnName: id
+                nullable: false
+    oneToMany:
+        objet:
+            targetEntity: CorinneBundle\Entity\Objet
+            mappedBy: sousCateg
+            nullable: false
+    lifecycleCallbacks: {  }

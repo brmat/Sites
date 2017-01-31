@@ -1,0 +1,43 @@
+{% extends '@Corinne/admin/index.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="card teal center">
+            <h1 class="white-text">Editer une sous catégorie :</h1>
+        </div>
+
+        {{ form_start(edit_form) }}
+        <center>
+        <div class="reducto">
+            <div class="row left-align">
+                <div class="col s12">
+                    <label><h6>catégorie</h6></label>
+                    {{ form_widget(edit_form.categorie) }}
+                    {{ form_errors(edit_form.categorie) }}
+                </div>
+            </div>
+            <div class="row left-align">
+                <div class="co s12">
+                    <label><h6>Sous catégorie</h6></label>
+                    {{ form_widget(edit_form.nomsouscat) }}
+                    {{ form_errors(edit_form.nomsouscat) }}
+                </div>
+            </div>
+        </div>
+        </center>
+
+        <div class="row center">
+            <ul>
+                <li>
+                    <input class="waves-effect waves-light btn" type="submit" value="Valider" />
+                    <a href="{{ path('souscategorie_index') }}" class="waves-effect waves-light btn">Retour a la Liste</a>
+                </li>
+            </ul>
+        </div>
+
+        {{ form_end(edit_form) }}
+
+    </div>
+
+{% endblock %}

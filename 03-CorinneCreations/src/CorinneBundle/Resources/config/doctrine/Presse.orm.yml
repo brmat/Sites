@@ -1,0 +1,24 @@
+CorinneBundle\Entity\Presse:
+    type: entity
+    table: null
+    repositoryClass: CorinneBundle\Repository\PresseRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        source:
+            type: string
+            length: 255
+        alt:
+            type: string
+            length: 255
+    lifecycleCallbacks:
+        prePersist: [ preUpload, setCreatedAtValue, setExpiresAtValue ]
+        preUpdate: [ preUpload, setUpdatedAtValue ]
+        postPersist: [ upload ]
+        postUpdate: [ upload ]
+        postRemove: [ removeUpload ]
+

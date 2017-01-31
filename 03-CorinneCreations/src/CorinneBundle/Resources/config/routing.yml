@@ -1,0 +1,65 @@
+#------- USER VIEW ---------------
+
+corinne_user:
+    resource: routing/user.yml
+    prefix:   /
+
+#------- ADMIN VIEWS -------------
+
+corinne_admin:
+    prefix: /
+    resource: routing/admin.yml
+
+corinne_categorie:
+    resource: "@CorinneBundle/Resources/config/routing/categorie.yml"
+    prefix:   /admin/categorie
+
+corinne_souscategorie:
+    resource: "@CorinneBundle/Resources/config/routing/souscategorie.yml"
+    prefix:   /admin/souscategorie
+
+corinne_objet:
+    resource: "@CorinneBundle/Resources/config/routing/objet.yml"
+    prefix:   /admin/objet
+
+corinne_presse:
+    resource: "@CorinneBundle/Resources/config/routing/presse.yml"
+    prefix:   /admin/presse
+
+corinne_event:
+    resource: "@CorinneBundle/Resources/config/routing/event.yml"
+    prefix:   /admin/event
+
+corinne_ecolabel:
+    resource: "@CorinneBundle/Resources/config/routing/ecolabel.yml"
+    prefix:   /admin/ecolabel
+
+corinne_contact:
+    resource: "@CorinneBundle/Resources/config/routing/contact.yml"
+    prefix:   /admin/contact
+
+contact_new:
+    path:     /new
+    defaults: { _controller: "CorinneBundle:Contact:new" }
+    methods:  [GET, POST]
+
+#----------- FOS USER BUNDLE SECURITY -----------------------
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /profile

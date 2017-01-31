@@ -1,0 +1,26 @@
+{% extends '@Corinne/layout.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m6 l6">
+                <div class="vertical amber-text">
+                <span >
+                    <h4>Eco-label</h4>
+                    {% for ecolabel in ecolabel %}
+                    <p>
+                        {{ ecolabel.texte }}
+
+                    </p>
+                    {% endfor %}
+                </span>
+                </div>
+            </div>
+            <div class="col s12 m6 l6">
+                {% for ecolabel in ecolabel %}
+                <img src="{{ asset('uploads/pictures/')}}{{ ecolabel.source }}" alt="{{ ecolabel.alt }}" class="img-size materialboxed">
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

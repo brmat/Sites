@@ -1,0 +1,71 @@
+{% extends '@Corinne/layout.html.twig' %}
+
+{% block body %}
+    
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <a href="https://drive.google.com/file/d/0B9DtNZpPt4nlRlpkdlMtWExsNGc/view">
+                    <span class="amber-text right right-size-mereau-text">Accepte la monnaie Méreau</span>
+                    <img src="{{ asset('bundles/corinne/images/mereau.png') }}" alt="monnaie méreau" class="right right-size-mereau">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+
+        {% for event in events %}
+
+            <div class="col s12 m6 l4">
+                <div class="card card-event">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator img-event" src="{{ asset('uploads/img-event/')}}{{ event.source }}"
+                             alt="{{ event.alt }}">
+                    </div>
+                    <div class="card-content activator amber-text" id="img-size-event">
+                        <span class="card-title  amber-text">{{ event.titre }}<i class="material-icons right">more_vert</i></span>
+                        <p>Voir l'évènement</p>
+                    </div>
+                    <div class="card-reveal card-event-reveal">
+                        <span class="card-title amber-text">{{ event.titre }}<i class="material-icons right">close</i></span>
+                        <p><span class="amber-text">{{ event.titre }} <br>
+                                {{ event.descriptif}} <br>
+                                --------------------<br>
+                                du : {{ event.dateDebut|date('d-m-Y') }} au {{ event.dateFin|date('d-m-Y') }} <br>
+                                Horaires : {{ event.dateDebut|date('H') }}H / {{ event.dateFin|date('H') }}H <br>
+                                --------------------<br>
+                                {{ event.lieu }}
+                        </span></p>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+
+        </div>
+    </div>
+
+
+{% endblock %}
+{% block js %}
+
+    <script type="text/javascript" src="{{ asset('bundles/corinne/js/masonry_grid/modernizr.custom.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/corinne/js/masonry_grid/masonry.pkgd.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/corinne/js/masonry_grid/js_imagesloaded.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/corinne/js/masonry_grid/js_classie.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/corinne/js/masonry_grid/AnimeOnScroll.js') }}"></script>
+
+    <script>
+        // ********************************************************************
+        // *                       AnimOnScroll Masonry Grid
+        // ********************************************************************
+
+        new AnimOnScroll( document.getElementById( 'grid' ), {
+            minDuration : 0.4,
+            maxDuration : 0.7,
+            viewportFactor : 0.2
+        } );
+    </script>
+{% endblock %}
