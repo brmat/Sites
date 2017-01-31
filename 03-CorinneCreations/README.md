@@ -12,13 +12,13 @@ PHP Symfony, HTML5, CSS3, Javascript, Jquery, Materialize, PhpStorm.
 ###Statut :###
  Fermer
 
-# HOW TO INSTALL
+### How to Install : ###
 
-## 1 : cloner le dépot GITHUB
-   * _$ git clone https://github.com/WildCodeSchool/bleau_S2_2016_corinne_creation.git
+#### 1 - Cloner le dépot GITHUB : ####
+   * git clone https://github.com/WildCodeSchool/bleau_S2_2016_corinne_creation.git
    
-## 2 : INSTALLER LES COMPOSANT DE SYMFONY
-   * _$ composer install
+#### 2 - Installer les composants de symfony : ####
+   * composer install
    * Paramêtré le serveur de mail "App/Config/parameters.yml"
        - mailer_host: smtp.xxxxx.net
        - mailer_port: 465
@@ -28,14 +28,14 @@ PHP Symfony, HTML5, CSS3, Javascript, Jquery, Materialize, PhpStorm.
        - mailer_password: sonmdp
        - secret: ThisTokenIsNotSoSecretChangeIt
    
-## 3 : CREER LA BASE DE DONNEES
-   * _$ php app/console doctrine:database:create
+#### 3 -  Creer la base de donnes : ####
+   * php app/console doctrine:database:create
    
-## 4 : METTRE A JOUR LA BASE DE DONNEES
+#### 4 - Mettre a jour la base de donnees : ####
         vérifier que tout se passe bien faire un --dump-sql
-   * -$ php app/console doctrine:schema:update --force
+   * php app/console doctrine:schema:update --force
    
-## 5 - PROCEDER A LA CREATION DES REPERTOIRES SUIVANT 
+#### 5 - Proceder a la creation des repertoires suivant : ####
     A céer dans le dossier web
    - uploads/img-creation
    - uploads/img-ecolabel
@@ -46,8 +46,8 @@ PHP Symfony, HTML5, CSS3, Javascript, Jquery, Materialize, PhpStorm.
    
     Il faut aussi modifier les droits sur ces répetroires
     
-## 6 - INSTALLER LES ASSETS
-   * _$ php app/console assets:install
+#### 6 - Installer les assets : ####
+   * php app/console assets:install
     
 >Dans l'administrateur, sur la page ecolabel, 
 
