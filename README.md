@@ -1,4 +1,4 @@
-#**Sites pour la Wild Code School**
+#**Sites pour la Wild Code School :**
 
 1. Wild Circus :
 2. Point Jardin :
